@@ -1,1 +1,80 @@
-{"type":"header","name":"Header group","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"message_69qyxV":{"type":"message","settings":{"text":"Gratis verzending vanaf €50!"}},"message_qJp9HE":{"type":"message","settings":{"text":"Voor 13:00 uur besteld, dezelfde dag verzonden"}},"message_eQxbgb":{"type":"message","disabled":true,"settings":{"text":"Tijdens het drukke decemberseizoen kunnen bestellingen iets langer onderweg zijn"}}},"block_order":["message_69qyxV","message_qJp9HE","message_eQxbgb"],"settings":{"color_scheme":"scheme-411d6327-4b7d-44e4-848b-d6fbadaf6640","enable_sticky":false,"autoplay":true,"cycle_speed":7}},"header":{"type":"header","settings":{"color_scheme":"scheme-2","enable_sticky":true,"hide_on_scroll":false,"mobile_layout":"logo_with_menu_left_navigation_right","desktop_layout":"logo_left_navigation_inline","logo":"shopify:\/\/shop_images\/Sportvoedingdirect_Horizontaal_Lang_-_Zwart.svg","logo_max_width":200,"logo_mobile_max_width":150,"menu":"menu-header","drawer_menu":"","secondary_menu":"product-categorie-n","desktop_dropdown_menu_style":"sidebar","menu_open_trigger":"hover","desktop_icon_size":16,"drawer_show_nested_menu_indicator":true,"show_country_selector":false,"show_country_name":false,"show_country_flag":false,"show_locale_selector":false,"transparent_header_text_color":"#d9ff36","transparent_logo":"shopify:\/\/shop_images\/Sportvoedingdirect_Horizontaal_Lang_-_Neon_Geel.svg"}}},"order":["announcement-bar","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message_69qyxV": {
+          "type": "message",
+          "settings": {
+            "text": "Gratis verzending vanaf €50!"
+          }
+        },
+        "message_qJp9HE": {
+          "type": "message",
+          "settings": {
+            "text": "Voor 13:00 uur besteld, dezelfde dag verzonden"
+          }
+        },
+        "message_eQxbgb": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "text": "Tijdens het drukke decemberseizoen kunnen bestellingen iets langer onderweg zijn"
+          }
+        }
+      },
+      "block_order": [
+        "message_69qyxV",
+        "message_qJp9HE",
+        "message_eQxbgb"
+      ],
+      "settings": {
+        "color_scheme": "scheme-411d6327-4b7d-44e4-848b-d6fbadaf6640",
+        "enable_sticky": false,
+        "autoplay": true,
+        "cycle_speed": 7
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "enable_sticky": true,
+        "hide_on_scroll": false,
+        "mobile_layout": "logo_with_menu_left_navigation_right",
+        "desktop_layout": "logo_left_navigation_inline",
+        "logo": "shopify://shop_images/Sportvoedingdirect_Horizontaal_Lang_-_Zwart.svg",
+        "logo_max_width": 200,
+        "logo_mobile_max_width": 150,
+        "menu": "menu-header",
+        "drawer_menu": "",
+        "secondary_menu": "product-categorie-n",
+        "desktop_dropdown_menu_style": "sidebar",
+        "menu_open_trigger": "hover",
+        "desktop_icon_size": 16,
+        "drawer_show_nested_menu_indicator": true,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "show_locale_selector": false,
+        "transparent_header_text_color": "#d9ff36",
+        "transparent_logo": "shopify://shop_images/Sportvoedingdirect_Horizontaal_Lang_-_Neon_Geel.svg"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

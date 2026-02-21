@@ -1,0 +1,303 @@
+{% doc %}
+  @prompt
+    Create a new section called “Benoemde producten” that displays a list of products referenced in the blog article metafield `custom.benoemde_producten` (type: list of products).
+    
+    Requirements:
+    - Check if the metafield exists and contains products.
+    - Render a title “Benoemde producten” that is editable in settings.
+    - Loop through all products and show:
+      - Product image (optional toggle)
+      - Product title
+      - Optional subline: use product metafield `custom.onderregel` if available, otherwise fall back to price or vendor (each toggleable).
+    - If the metafield is empty, display “Nog geen producten geselecteerd.”
+    - Section settings:
+      1. Heading text
+      2. Show image (checkbox)
+      3. Show price if no subline (checkbox)
+      4. Show vendor if no subline (checkbox)
+      5. Always render even if empty (checkbox)
+      6. Empty state text
+    - Make the section available for article templates with `"templates": ["article"]`.
+    - Use clean, minimal CSS with a simple grid, light borders, and a small hover lift on cards.
+    - Use safe Liquid syntax: `{% liquid %}` for logic and `{{ }}` for output.
+    , Can you make it a bit more subtile? So somewhat smaller?
+{% enddoc %}
+{% liquid
+  assign ai_gen_id = block.id | replace: '_', '' | downcase
+  assign benoemde_producten = article.metafields.custom.benoemde_producten.value
+  assign has_products = false
+  
+  if benoemde_producten != blank and benoemde_producten.size > 0
+    assign has_products = true
+  endif
+%}
+
+{% if has_products or block.settings.always_render %}
+  {% style %}
+    .ai-benoemde-producten-{{ ai_gen_id }} {
+      padding: 24px 20px;
+    }
+
+    .ai-benoemde-producten__heading-{{ ai_gen_id }} {
+      margin: 0 0 20px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .ai-benoemde-producten__grid-{{ ai_gen_id }} {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .ai-benoemde-producten__card-{{ ai_gen_id }} {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .ai-benoemde-producten__card-{{ ai_gen_id }}:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .ai-benoemde-producten__image-wrapper-{{ ai_gen_id }} {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      overflow: hidden;
+      background: #f9f9f9;
+    }
+
+    .ai-benoemde-producten__image-{{ ai_gen_id }} {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ai-benoemde-producten__image-placeholder-{{ ai_gen_id }} {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9f9f9;
+    }
+
+    .ai-benoemde-producten__image-placeholder-{{ ai_gen_id }} svg {
+      width: 50%;
+      height: 50%;
+      opacity: 0.2;
+    }
+
+    .ai-benoemde-producten__content-{{ ai_gen_id }} {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-grow: 1;
+    }
+
+    .ai-benoemde-producten__title-{{ ai_gen_id }} {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.3;
+        color: #000;
+    }
+
+    .ai-benoemde-producten__subline-{{ ai_gen_id }} {
+      margin: 0;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .ai-benoemde-producten__price-{{ ai_gen_id }} {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .ai-benoemde-producten__vendor-{{ ai_gen_id }} {
+      margin: 0;
+      font-size: 11px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .ai-benoemde-producten__empty-{{ ai_gen_id }} {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 749px) {
+      .ai-benoemde-producten__grid-{{ ai_gen_id }} {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+      }
+
+      .ai-benoemde-producten__heading-{{ ai_gen_id }} {
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+
+      .ai-benoemde-producten__content-{{ ai_gen_id }} {
+        padding: 10px;
+      }
+
+      .ai-benoemde-producten__title-{{ ai_gen_id }} {
+        font-size: 12px;
+      }
+    }
+  {% endstyle %}
+
+  <div class="ai-benoemde-producten-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-benoemde-producten__heading-{{ ai_gen_id }}">
+        {{ block.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% if has_products %}
+      <div class="ai-benoemde-producten__grid-{{ ai_gen_id }}">
+        {% for product in benoemde_producten %}
+          <a href="{{ product.url }}" class="ai-benoemde-producten__card-{{ ai_gen_id }}">
+            {% if block.settings.show_image %}
+              <div class="ai-benoemde-producten__image-wrapper-{{ ai_gen_id }}">
+                {% if product.featured_image %}
+                  <img
+                    src="{{ product.featured_image | image_url: width: 400 }}"
+                    alt="{{ product.featured_image.alt | escape }}"
+                    class="ai-benoemde-producten__image-{{ ai_gen_id }}"
+                    loading="lazy"
+                    width="400"
+                    height="400"
+                  >
+                {% else %}
+                  <div class="ai-benoemde-producten__image-placeholder-{{ ai_gen_id }}">
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <div class="ai-benoemde-producten__content-{{ ai_gen_id }}">
+              <h3 class="ai-benoemde-producten__title-{{ ai_gen_id }}">
+                {{ product.title }}
+              </h3>
+
+              {% liquid
+                assign onderregel = product.metafields.custom.onderregel
+                assign show_fallback = false
+                
+                if onderregel == blank
+                  assign show_fallback = true
+                endif
+              %}
+
+              {% if onderregel != blank %}
+                <p class="ai-benoemde-producten__subline-{{ ai_gen_id }}">
+                  {{ onderregel }}
+                </p>
+              {% elsif show_fallback %}
+                {% if block.settings.show_price %}
+                  <p class="ai-benoemde-producten__price-{{ ai_gen_id }}">
+                    {{ product.price | money }}
+                  </p>
+                {% elsif block.settings.show_vendor and product.vendor != blank %}
+                  <p class="ai-benoemde-producten__vendor-{{ ai_gen_id }}">
+                    {{ product.vendor }}
+                  </p>
+                {% endif %}
+              {% endif %}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="ai-benoemde-producten__empty-{{ ai_gen_id }}">
+        {{ block.settings.empty_state_text }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Benoemde producten",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Benoemde producten"
+    },
+    {
+      "type": "text",
+      "id": "empty_state_text",
+      "label": "Empty state text",
+      "default": "Nog geen producten geselecteerd."
+    },
+    {
+      "type": "header",
+      "content": "Display options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Show product image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price if no subline",
+      "info": "Displays when product has no onderregel metafield",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor if no subline",
+      "info": "Displays when product has no onderregel metafield and price is hidden",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "always_render",
+      "label": "Always render section",
+      "info": "Show section even when no products are selected",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benoemde producten"
+    }
+  ]
+}
+{% endschema %}

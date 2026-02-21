@@ -1,0 +1,126 @@
+{% comment %}
+  Sectie: Benoemde producten (foolproof)
+  Leest artikel-metafield: custom.benoemde_producten  → List of Product references
+{% endcomment %}
+
+<section class="products-mentioned" aria-label="Benoemde producten">
+  {%- liquid
+    assign meta_key = article.metafields.custom.benoemde_producten
+    assign prods = blank
+
+    if meta_key != blank and meta_key.value
+      assign prods = meta_key.value
+    endif
+
+    assign count = 0
+    if prods != blank
+      assign count = prods.size
+    endif
+  -%}
+
+  {% if section.settings.debug_mode %}
+    <div class="pm-debug">
+      <strong>Debug</strong><br>
+      <code>raw:</code> {{ meta_key | json }}<br>
+      <code>count:</code> {{ count }}
+    </div>
+  {% endif %}
+
+  {% if count > 0 or section.settings.always_render %}
+    <h2 class="products-mentioned__title">
+      {{ section.settings.heading | default: 'Benoemde producten' }}
+    </h2>
+  {% endif %}
+
+  {% if count > 0 %}
+    <ul class="products-mentioned__list" role="list">
+      {% for p in prods %}
+        {% if p %}
+          <li class="products-mentioned__item">
+            <a class="products-mentioned__link" href="{{ p.url }}">
+              {% if section.settings.show_image and p.featured_image %}
+                <span class="products-mentioned__thumb">
+                  <img
+                    src="{{ p.featured_image | image_url: width: 120 }}"
+                    alt="{{ p.featured_image.alt | escape }}"
+                    loading="lazy">
+                </span>
+              {% endif %}
+              <span class="products-mentioned__text">
+                <span class="products-mentioned__name">{{ p.title }}</span>
+
+                {% assign onderregel = p.metafields.custom.onderregel %}
+                {% if onderregel != blank %}
+                  <span class="products-mentioned__sub">{{ onderregel | escape }}</span>
+                {% elsif section.settings.show_price %}
+                  <span class="products-mentioned__sub">
+                    {% if p.price_varies %}
+                      Vanaf {{ p.price_min | money }}
+                    {% else %}
+                      {{ p.price | money }}
+                    {% endif %}
+                  </span>
+                {% elsif section.settings.show_vendor and p.vendor %}
+                  <span class="products-mentioned__sub">{{ p.vendor }}</span>
+                {% endif %}
+              </span>
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% elsif section.settings.always_render %}
+    <p class="products-mentioned__empty">
+      {{ section.settings.empty_text | default: 'Nog geen producten geselecteerd.' }}
+    </p>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Benoemde producten",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Kop", "default": "Products mentioned" },
+    { "type": "checkbox", "id": "show_image", "label": "Afbeelding tonen", "default": false },
+    { "type": "checkbox", "id": "show_price", "label": "Prijs tonen als er geen onderregel-metafield is", "default": false },
+    { "type": "checkbox", "id": "show_vendor", "label": "Vendor tonen als er geen onderregel-metafield is", "default": false },
+    { "type": "checkbox", "id": "always_render", "label": "Sectie ook tonen als er geen producten zijn", "default": true },
+    { "type": "text", "id": "empty_text", "label": "Lege melding", "default": "Nog geen producten geselecteerd." },
+    { "type": "checkbox", "id": "debug_mode", "label": "Debug tonen (alleen tijdelijk gebruiken)", "default": false }
+  ],
+  "templates": ["article"]
+}
+{% endschema %}
+
+{% style %}
+.products-mentioned { margin: 40px 0; }
+.products-mentioned__title { margin: 0 0 16px; font-size: 1.25rem; }
+.products-mentioned__list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 12px;
+}
+.products-mentioned__item {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  background: #fff;
+}
+.products-mentioned__link {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .1s ease, box-shadow .1s ease;
+}
+.products-mentioned__link:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.06); }
+.products-mentioned__thumb img { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; display: block; }
+.products-mentioned__text { display: grid; gap: 4px; }
+.products-mentioned__name { font-weight: 600; line-height: 1.25; }
+.products-mentioned__sub { opacity: .85; font-size: .95rem; }
+.products-mentioned__empty { opacity: .75; }
+.pm-debug { font-size: .9rem; padding: 8px 10px; border: 1px dashed #bbb; border-radius: 8px; margin-bottom: 12px; }
+.pm-debug code { background: #f6f6f6; padding: 1px 4px; border-radius: 4px; }
+@media (min-width: 720px) { .products-mentioned__list { grid-template-columns: 1fr; } }
+{% endstyle %}

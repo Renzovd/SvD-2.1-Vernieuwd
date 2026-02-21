@@ -1,11 +1,24 @@
 {%- if section.blocks.size > 0 -%}
-  {%- if section.settings.transition_type != 'fade' -%}
-    <style>
+  <style>
+    {%- if section.settings.transition_type != 'fade' -%}
       #shopify-section-{{ section.id }} {
         --slideshow-background: {{ section.settings.background.rgb }};
       }
-    </style>
-  {%- endif -%}
+    {%- endif -%}
+
+    {%- if section.settings.enable_frame -%}
+      #shopify-section-{{ section.id }} {
+        padding: {{ section.settings.frame_padding }}px;
+        background:
+          radial-gradient(ellipse at top left, {{ section.settings.frame_color }} 0%, transparent 60%),
+          radial-gradient(ellipse at bottom right, {{ section.settings.frame_color }} 0%, transparent 60%),
+          #ffffff;
+      }
+      #shopify-section-{{ section.id }} .slideshow {
+        border-radius: {{ section.settings.frame_border_radius }}px;
+      }
+    {%- endif -%}
+  </style>
 
   <slideshow-carousel id="slideshow-{{ section.id }}" allow-swipe cell-selector=".slideshow__slide" {% if section.settings.allow_transparent_header %}allow-transparent-header{% endif %} class="slideshow" transition="{{ section.settings.transition_type }}" {% if section.settings.autoplay %}autoplay="{{ section.settings.cycle_speed }}" {% if section.settings.pause_auto_rotate_on_hover %}pause-on-hover{% endif %}{% endif %} role="region">
     {%- content_for 'blocks' -%}
@@ -125,6 +138,45 @@
       "info": "t:sections.slideshow.background_info",
       "default": "#000000"
     },
+    {
+      "type": "header",
+      "content": "Outer frame"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_frame",
+      "label": "Show outer frame",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "frame_color",
+      "label": "Frame background color",
+      "default": "#d9ff36",
+      "visible_if": "{{ section.settings.enable_frame }}"
+    },
+    {
+      "type": "range",
+      "id": "frame_padding",
+      "label": "Frame padding",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20,
+      "visible_if": "{{ section.settings.enable_frame }}"
+    },
+    {
+      "type": "range",
+      "id": "frame_border_radius",
+      "label": "Frame border radius",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24,
+      "visible_if": "{{ section.settings.enable_frame }}"
+    }
   ],
   "blocks": [
     { "type": "_slideshow-image-slide" },

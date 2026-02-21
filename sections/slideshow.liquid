@@ -9,10 +9,12 @@
     {%- if section.settings.enable_frame -%}
       #shopify-section-{{ section.id }} {
         padding: {{ section.settings.frame_padding }}px;
-        background:
-          radial-gradient(ellipse at top left, {{ section.settings.frame_color }} 0%, transparent 60%),
-          radial-gradient(ellipse at bottom right, {{ section.settings.frame_color }} 0%, transparent 60%),
-          #ffffff;
+        background: linear-gradient(
+          to top right,
+          {{ section.settings.frame_color }} 0%,
+          rgb({{ section.settings.frame_color.rgb }} / 0.4) 40%,
+          #ffffff 75%
+        );
       }
       #shopify-section-{{ section.id }} .slideshow {
         border-radius: {{ section.settings.frame_border_radius }}px;

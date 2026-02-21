@@ -39,6 +39,30 @@
       #shopify-section-{{ section.id }} .scroll-marker-group--autoplay .scroll-marker[aria-current="true"] .scroll-marker-group__line-progress {
         background-color: {{ section.settings.frame_color }};
       }
+
+      /* Subtitle: uppercase with wide letter spacing */
+      #shopify-section-{{ section.id }} .slideshow__slide p {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      /* Button: pill shape, neon border, white text */
+      #shopify-section-{{ section.id }} .slideshow__slide .button--outline {
+        border-color: {{ section.settings.frame_color }};
+        border-width: 2px;
+        color: #ffffff;
+        border-radius: 9999px;
+        padding-inline: 2.5rem;
+        padding-block: 0.875rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+      }
+      #shopify-section-{{ section.id }} .slideshow__slide .button--outline:hover {
+        background-color: {{ section.settings.frame_color }};
+        color: #1a1a1a;
+      }
     {%- endif -%}
   </style>
 

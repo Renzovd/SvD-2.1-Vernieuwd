@@ -17,6 +17,28 @@
       #shopify-section-{{ section.id }} .slideshow {
         border-radius: {{ section.settings.frame_border_radius }}px;
       }
+      #shopify-section-{{ section.id }} .slideshow__controls {
+        place-self: end center;
+        margin-inline-end: 0;
+      }
+      #shopify-section-{{ section.id }} .slideshow__autoplay-button {
+        display: none;
+      }
+      #shopify-section-{{ section.id }} .scroll-marker-group--lines .scroll-marker {
+        --scroll-marker-width: 2rem;
+        --scroll-marker-height: 2px;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      #shopify-section-{{ section.id }} .scroll-marker-group--lines .scroll-marker[aria-current="true"] {
+        --scroll-marker-width: 2rem;
+        background-color: {{ section.settings.frame_color }};
+      }
+      #shopify-section-{{ section.id }} .scroll-marker-group--autoplay .scroll-marker[aria-current="true"] {
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      #shopify-section-{{ section.id }} .scroll-marker-group--autoplay .scroll-marker[aria-current="true"] .scroll-marker-group__line-progress {
+        background-color: {{ section.settings.frame_color }};
+      }
     {%- endif -%}
   </style>
 

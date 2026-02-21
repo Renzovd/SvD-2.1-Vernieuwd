@@ -25,21 +25,23 @@
             "overlay_opacity": 20
           },
           "blocks": {
-            "heading_7thVDT": {
-              "type": "heading",
+            "hero_heading_8EQFTW": {
+              "type": "hero-heading",
+              "name": "Hero Heading",
               "settings": {
                 "text": "Direct de juiste voeding",
                 "heading_size": "display-m",
                 "html_tag": "h2",
                 "indent": "none",
                 "highlight_effect": "none",
-                "highlight_accent_color": "rgba(0,0,0,0)",
-                "highlight_text_color": "rgba(0,0,0,0)"
+                "highlight_accent_color": "",
+                "highlight_text_color": ""
               },
               "blocks": {}
             },
-            "rich_text_gFDKjw": {
+            "rich_text_DBcyfP": {
               "type": "rich-text",
+              "name": "t:blocks.rich_text.name",
               "settings": {
                 "text": "<p>De beste voeding voor jouw ambitie. Snel en makkelijk.</p>",
                 "content_width": "sm"
@@ -60,8 +62,8 @@
             }
           },
           "block_order": [
-            "heading_7thVDT",
-            "rich_text_gFDKjw",
+            "hero_heading_8EQFTW",
+            "rich_text_DBcyfP",
             "button_E44UQG"
           ]
         },

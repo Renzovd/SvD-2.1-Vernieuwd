@@ -13,7 +13,7 @@
 
 {% schema %}
 {
-  "name": "Heading",
+  "name": "Hero Heading",
   "tag": null,
   "settings": [
     {
@@ -28,6 +28,10 @@
       "label": "t:global.text.size",
       "options": [
         {
+          "value": "display-xxl",
+          "label": "Display XXL"
+        },
+        {
           "value": "display-xl",
           "label": "Display XL"
         },
@@ -38,6 +42,10 @@
         {
           "value": "display-m",
           "label": "Display M"
+        },
+        {
+          "value": "display-s",
+          "label": "Display S"
         },
         {
           "value": "h1",
@@ -68,7 +76,7 @@
           "label": "XX-Small"
         }
       ],
-      "default": "h3"
+      "default": "display-m"
     },
     {
       "type": "select",
@@ -105,7 +113,7 @@
           "label": "H6"
         }
       ],
-      "default": "p"
+      "default": "h2"
     },
     {
       "type": "select",
@@ -182,7 +190,7 @@
           "label": "t:global.heading_effect.effect_options.tilted_marker"
         }
       ],
-      "default": "default"
+      "default": "none"
     },
     {
       "type": "color",
@@ -197,7 +205,7 @@
   ],
   "presets": [
     {
-      "name": "t:blocks.heading.name"
+      "name": "Hero Heading"
     }
   ]
 }

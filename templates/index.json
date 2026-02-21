@@ -18,33 +18,35 @@
             "color_scheme": "scheme-4",
             "image": "shopify://shop_images/Hero4.jpg",
             "slide_link": "",
-            "content_max_width": 1000,
+            "content_max_width": 1400,
             "mobile_content_position": "place-self-center",
             "desktop_content_position": "sm:place-self-center",
             "overlay_color": "#000000",
             "overlay_opacity": 20
           },
           "blocks": {
-            "hero_heading_8EQFTW": {
+            "heading_7thVDT": {
               "type": "hero-heading",
-              "name": "Hero Heading",
               "settings": {
                 "text": "Direct de juiste voeding",
                 "heading_size": "display-m",
                 "html_tag": "h2",
                 "indent": "none",
                 "highlight_effect": "none",
-                "highlight_accent_color": "",
-                "highlight_text_color": ""
+                "highlight_accent_color": "rgba(0,0,0,0)",
+                "highlight_text_color": "rgba(0,0,0,0)"
               },
               "blocks": {}
             },
-            "rich_text_DBcyfP": {
-              "type": "rich-text",
-              "name": "t:blocks.rich_text.name",
+            "rich_text_gFDKjw": {
+              "type": "hero-rich-text",
               "settings": {
                 "text": "<p>De beste voeding voor jouw ambitie. Snel en makkelijk.</p>",
-                "content_width": "sm"
+                "content_width": "full",
+                "text_transform": "uppercase",
+                "letter_spacing_percent": 15,
+                "font_weight": "500",
+                "font_size": 14
               },
               "blocks": {}
             },
@@ -62,8 +64,8 @@
             }
           },
           "block_order": [
-            "hero_heading_8EQFTW",
-            "rich_text_DBcyfP",
+            "heading_7thVDT",
+            "rich_text_gFDKjw",
             "button_E44UQG"
           ]
         },
@@ -73,7 +75,7 @@
             "color_scheme": "scheme-4",
             "image": "shopify://shop_images/Hero2.jpg",
             "slide_link": "",
-            "content_max_width": 1000,
+            "content_max_width": 1400,
             "mobile_content_position": "place-self-center",
             "desktop_content_position": "sm:place-self-center",
             "overlay_color": "#000000",
@@ -81,23 +83,27 @@
           },
           "blocks": {
             "heading_BXqHGd": {
-              "type": "heading",
+              "type": "hero-heading",
               "settings": {
                 "text": "Direct de juiste voeding voor sneller herstel",
                 "heading_size": "display-m",
                 "html_tag": "h2",
                 "indent": "none",
-                "highlight_effect": "default",
+                "highlight_effect": "none",
                 "highlight_accent_color": "",
                 "highlight_text_color": ""
               },
               "blocks": {}
             },
             "rich_text_VWCE3R": {
-              "type": "rich-text",
+              "type": "hero-rich-text",
               "settings": {
-                "text": "<p><em>Geef je spieren wat ze verdienen met eiwitten en herstelshakes.</em></p>",
-                "content_width": "md"
+                "text": "<p>Geef je spieren wat ze verdienen met eiwitten en herstelshakes.</p>",
+                "content_width": "full",
+                "text_transform": "uppercase",
+                "letter_spacing_percent": 15,
+                "font_weight": "500",
+                "font_size": 14
               },
               "blocks": {}
             },
@@ -126,7 +132,7 @@
             "color_scheme": "scheme-4",
             "image": "shopify://shop_images/Hero6.jpg",
             "slide_link": "",
-            "content_max_width": 1000,
+            "content_max_width": 1400,
             "mobile_content_position": "place-self-center",
             "desktop_content_position": "sm:place-self-center",
             "overlay_color": "#000000",
@@ -134,23 +140,27 @@
           },
           "blocks": {
             "heading_gcTiNC": {
-              "type": "heading",
+              "type": "hero-heading",
               "settings": {
                 "text": "120 gram koolydraten per uur",
                 "heading_size": "display-m",
                 "html_tag": "h2",
                 "indent": "none",
-                "highlight_effect": "default",
+                "highlight_effect": "none",
                 "highlight_accent_color": "",
                 "highlight_text_color": ""
               },
               "blocks": {}
             },
             "rich_text_NzNRkp": {
-              "type": "rich-text",
+              "type": "hero-rich-text",
               "settings": {
-                "text": "<p><em>Alle sportvoeding voor je voedingsplan om tot 120 gram koolhydraten per uur te komen.</em></p>",
-                "content_width": "sm"
+                "text": "<p>Alle sportvoeding voor je voedingsplan om tot 120 gram koolhydraten per uur te komen.</p>",
+                "content_width": "full",
+                "text_transform": "uppercase",
+                "letter_spacing_percent": 15,
+                "font_weight": "500",
+                "font_size": 14
               },
               "blocks": {}
             },

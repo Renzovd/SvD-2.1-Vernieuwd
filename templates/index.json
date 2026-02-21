@@ -83,7 +83,7 @@
               "settings": {
                 "text": "Direct de juiste voeding voor sneller herstel",
                 "heading_size": "display-m",
-                "html_tag": "p",
+                "html_tag": "h2",
                 "indent": "none",
                 "highlight_effect": "default",
                 "highlight_accent_color": "",
@@ -95,7 +95,7 @@
               "type": "rich-text",
               "settings": {
                 "text": "<p><em>Geef je spieren wat ze verdienen met eiwitten en herstelshakes.</em></p>",
-                "content_width": "sm"
+                "content_width": "md"
               },
               "blocks": {}
             },
@@ -136,7 +136,7 @@
               "settings": {
                 "text": "120 gram koolydraten per uur",
                 "heading_size": "display-m",
-                "html_tag": "p",
+                "html_tag": "h2",
                 "indent": "none",
                 "highlight_effect": "default",
                 "highlight_accent_color": "",

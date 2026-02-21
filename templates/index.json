@@ -29,8 +29,8 @@
               "type": "heading",
               "settings": {
                 "text": "Direct de juiste voeding",
-                "heading_size": "display-xxl",
-                "html_tag": "h1",
+                "heading_size": "display-m",
+                "html_tag": "h2",
                 "indent": "none",
                 "highlight_effect": "none",
                 "highlight_accent_color": "rgba(0,0,0,0)",

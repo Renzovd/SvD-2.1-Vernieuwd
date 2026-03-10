@@ -1,1 +1,72 @@
-{"type":"footer","name":"Footer group","sections":{"trust-icons":{"type":"trust-icons","blocks":{"item_iYeG3y":{"type":"item","settings":{"icon":"none","icon_width":24,"mobile_icon_width":20,"title":"<strong>Topmerken & kwaliteit<\/strong>","content":"Altijd betrouwbare sportvoeding die (top)sporters vertrouwen en gebruiken. Zo ga jij voor de beste resultaten, elke training en wedstrijd opnieuw."}},"item-2":{"type":"item","settings":{"icon":"none","icon_width":24,"mobile_icon_width":20,"title":"Snelle levering","content":"Bestel je op werkdagen vóór 13:00 uur, dan verzenden we je sportvoeding dezelfde dag nog."}},"item-3":{"type":"item","settings":{"icon":"none","icon_width":24,"mobile_icon_width":20,"title":"<strong>Voordeel met Direct+<\/strong>","content":"Als Direct+ lid profiteer je standaard van hogere korting op alle sportvoeding en spaar je dubbel zo snel punten. Zo haal je nog méér uit jouw bestelling."}},"item-4":{"type":"item","settings":{"icon":"none","icon_width":24,"mobile_icon_width":20,"title":"<strong>Vragen & Advies<\/strong>","content":"Twijfel je over je keuze? Vraag het onze experts. Wij helpen je graag persoonlijk de perfecte voeding te vinden die past bij jouw doel."}}},"block_order":["item_iYeG3y","item-2","item-3","item-4"],"settings":{"color_scheme":"scheme-2","item_heading_style":"subheading"}},"footer":{"type":"footer","blocks":{"newsletter":{"type":"newsletter","settings":{"title":"Blijf op de hoogte","content":"","disclaimer_text":"<p>Door je aan te melden ga je akkoord met de algemene en privacyvoorwaarden. Je kunt je op elk moment weer afmelden.<\/p>"}},"text_rbFFcb":{"type":"text","settings":{"title":"Merken","content":"<p><a href=\"\/collections\/226ers\" title=\"226ers\">226ERS<\/a><br\/><a href=\"\/collections\/amacx\" title=\"Amacx\">Amacx<\/a><br\/><a href=\"\/collections\/maurten\" title=\"Maurten\">Maurten<\/a> <br\/><a href=\"\/collections\/precision\" title=\"Precision\">Presicion Fuel en Hydration<\/a><\/p>","enable_follow_on_shop":true}},"links":{"type":"links","settings":{"menu":"product-categorie-n","collapse_on_mobile":true,"show_menu_title":true,"menu_title":"Soorten sportvoeding"}},"text":{"type":"text","settings":{"title":"Over Sportvoedingdirect.nl","content":"<p><a href=\"https:\/\/sportvoedingdirect.nl\/collections\/all\" target=\"_blank\" title=\"Ons assortiment\">Alle sportvoeding<br\/><\/a><a href=\"\/pages\/faq\" title=\"faq\">Veelgestelde vragen<\/a><br\/><a href=\"\/blogs\/nieuws\" title=\"Nieuws\">Nieuws<\/a><br\/><a href=\"\/policies\/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">Privacy Policy<\/a><br\/><a href=\"\/policies\/terms-of-service\" target=\"_blank\" title=\"Terms of Service\">Algemene voorwaarden<br\/><\/a><a href=\"\/pages\/onze-partners\" target=\"_blank\" title=\"Onze Partners & sporters\">Onze partners en sporters<br\/><\/a><a href=\"\/pages\/ambassadeur-worden\" target=\"_blank\" title=\"Ambassadeursprogramma\">Ambassadeurs<\/a><a href=\"\/pages\/over-ons\" title=\"Over ons\"><br\/>Alles over SportvoedingDirect<\/a><\/p><p><\/p><p><\/p><p><\/p>","enable_follow_on_shop":true}}},"block_order":["newsletter","text_rbFFcb","links","text"],"settings":{"color_scheme":"scheme-5","show_social_media":true,"show_payment_icons":true,"show_powered_by_shopify":true,"show_country_selector":true,"show_country_name":true,"show_country_flag":true,"show_locale_selector":true}}},"order":["trust-icons","footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Blijf op de hoogte",
+            "content": "",
+            "disclaimer_text": "<p>Door je aan te melden ga je akkoord met de algemene en privacyvoorwaarden. Je kunt je op elk moment weer afmelden.</p>"
+          }
+        },
+        "text_rbFFcb": {
+          "type": "text",
+          "settings": {
+            "title": "Merken",
+            "content": "<p><a href=\"/collections/226ers\" title=\"226ers\">226ERS</a><br/><a href=\"/collections/amacx\" title=\"Amacx\">Amacx</a><br/><a href=\"/collections/maurten\" title=\"Maurten\">Maurten</a> <br/><a href=\"/collections/precision\" title=\"Precision\">Presicion Fuel en Hydration</a></p>",
+            "enable_follow_on_shop": true
+          }
+        },
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "product-categorie-n",
+            "collapse_on_mobile": true,
+            "show_menu_title": true,
+            "menu_title": "Soorten sportvoeding"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "title": "Over Sportvoedingdirect.nl",
+            "content": "<p><a href=\"https://sportvoedingdirect.nl/collections/all\" target=\"_blank\" title=\"Ons assortiment\">Alle sportvoeding<br/></a><a href=\"/pages/faq\" title=\"faq\">Veelgestelde vragen</a><br/><a href=\"/blogs/nieuws\" title=\"Nieuws\">Nieuws</a><br/><a href=\"/policies/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">Privacy Policy</a><br/><a href=\"/policies/terms-of-service\" target=\"_blank\" title=\"Terms of Service\">Algemene voorwaarden<br/></a><a href=\"/pages/onze-partners\" target=\"_blank\" title=\"Onze Partners & sporters\">Onze partners en sporters<br/></a><a href=\"/pages/ambassadeur-worden\" target=\"_blank\" title=\"Ambassadeursprogramma\">Ambassadeurs</a><a href=\"/pages/over-ons\" title=\"Over ons\"><br/>Alles over SportvoedingDirect</a></p><p></p><p></p><p></p>",
+            "enable_follow_on_shop": true
+          }
+        }
+      },
+      "block_order": [
+        "newsletter",
+        "text_rbFFcb",
+        "links",
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_powered_by_shopify": true,
+        "show_country_selector": true,
+        "show_country_name": true,
+        "show_country_flag": true,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

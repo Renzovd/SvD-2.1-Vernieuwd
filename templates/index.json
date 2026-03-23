@@ -221,11 +221,11 @@
         "collection_Lh8hLN": {
           "type": "collection",
           "settings": {
-            "collection": "favorieten",
-            "products_count": 6,
-            "title": "Bekijk alle favorieten",
-            "content": "{{ block.settings.collection.description }}",
-            "link": "{{ block.settings.collection.url }}"
+            "collection": "all",
+            "products_count": 4,
+            "title": "Vaak gekocht door anderen:",
+            "content": "",
+            "link": "shopify://collections/all"
           }
         }
       },
@@ -238,9 +238,9 @@
         "stack_products_desktop": false,
         "products_per_row_mobile": "1",
         "products_per_row_desktop": 4,
-        "tabs_alignment": "center",
+        "tabs_alignment": "start",
         "tabs_icon": "none",
-        "show_view_all_button": false,
+        "show_view_all_button": true,
         "show_scrolling_bar": false
       }
     },

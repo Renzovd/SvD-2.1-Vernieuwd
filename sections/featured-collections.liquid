@@ -1,4 +1,12 @@
 {%- if section.blocks.size > 0 -%}
+  {%- liquid
+    assign is_often_bought_section = false
+
+    if section.blocks.size == 1 and section.blocks.first.settings.title == 'Vaak gekocht door anderen:'
+      assign is_often_bought_section = true
+    endif
+  -%}
+
   <style>
     #shopify-section-{{ section.id }} {
       --product-list-column-count: {{ section.settings.products_per_row_mobile | times: 1 }};
@@ -15,6 +23,28 @@
         --product-list-column-count: {{ section.settings.products_per_row_desktop }};
       }
     }
+
+    {%- if is_often_bought_section -%}
+      #shopify-section-{{ section.id }} .featured-collections-header .button {
+        background: #000000;
+        color: #ffffff;
+        border-color: #000000;
+      }
+
+      #shopify-section-{{ section.id }} .featured-collections-header .button:hover {
+        background: #000000;
+        color: #ffffff;
+        border-color: #000000;
+        opacity: 0.92;
+      }
+
+      #shopify-section-{{ section.id }} .featured-collections-products .product-card__figure {
+        background: #f1f1ef;
+        border-radius: 16px;
+        padding: 22px;
+        margin-inline: 8px;
+      }
+    {%- endif -%}
   </style>
 
   <div class="color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
@@ -59,7 +89,11 @@
           </featured-collections-tabs>
 
           {%- if section.settings.show_view_all_button and has_at_least_one_description == false and section.settings.tabs_alignment != 'center' -%}
-            {%- assign view_all_button = 'sections.featured_collections.view_all' | t -%}
+            {%- if is_often_bought_section -%}
+              {%- assign view_all_button = 'Bekijk alle sportvoeding' -%}
+            {%- else -%}
+              {%- assign view_all_button = 'sections.featured_collections.view_all' | t -%}
+            {%- endif -%}
             {%- render 'button', content: view_all_button, href: section.blocks.first.settings.link, style: 'outline', class: 'md-max:hidden' -%}
           {%- endif -%}
         </div>
@@ -90,7 +124,11 @@
               -%}
 
               {%- if show_content or section.settings.show_view_all_button -%}
-                {%- assign view_all_button = 'sections.featured_collections.view_all' | t -%}
+                {%- if is_often_bought_section -%}
+                  {%- assign view_all_button = 'Bekijk alle sportvoeding' -%}
+                {%- else -%}
+                  {%- assign view_all_button = 'sections.featured_collections.view_all' | t -%}
+                {%- endif -%}
 
                 {%- if section.settings.tabs_alignment == 'center' -%}
                   <div class="prose prose-justify-center max-w-md">

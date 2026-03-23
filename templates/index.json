@@ -285,25 +285,23 @@
         }
       },
       "block_order": [
-        "logo_8jWHBm",
-        "logo_Pn9dYR",
         "logo_NjERnt",
-        "logo_L6eVEx"
+        "logo_Pn9dYR",
+        "logo_L6eVEx",
+        "logo_8jWHBm"
       ],
-      "custom_css": [
-        ".logo-list {margin-top: 10px; margin-bottom: -90px;}"
-      ],
+      "custom_css": [],
       "name": "t:sections.logo_list.name",
       "settings": {
         "color_scheme": "scheme-2",
         "subheading": "",
-        "title": "Onze merken",
-        "heading_tag": "h3",
-        "content_alignment": "center",
+        "title": "BESCHIKBARE MERKEN",
+        "heading_tag": "h5",
+        "content_alignment": "left",
         "reveal_on_scroll": true,
-        "stack_on_mobile": true,
+        "stack_on_mobile": false,
         "add_logos_spacing": false,
-        "logos_padding_block": 10,
+        "logos_padding_block": 0,
         "logo_background": "",
         "logo_border": ""
       }

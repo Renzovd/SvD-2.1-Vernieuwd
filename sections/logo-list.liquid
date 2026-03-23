@@ -13,6 +13,12 @@
     if section.settings.logo_border != 'rgba(0,0,0,0)' or section.settings.logo_background != 'rgba(0,0,0,0)' and section.settings.logo_background != section.settings.color_scheme.settings.background
       assign show_logos_in_block = true
     endif
+
+    assign is_available_brands_section = false
+
+    if section.settings.title == 'BESCHIKBARE MERKEN'
+      assign is_available_brands_section = true
+    endif
   -%}
 
   <style>
@@ -33,6 +39,37 @@
         --logo-list-gap: {% if show_logos_in_block %}{% if section.settings.add_logos_spacing %}1.5rem{% else %}0px{% endif %}{% else %}1.5rem 7.5rem{% endif %};
       }
     }
+
+    {%- if is_available_brands_section -%}
+      #shopify-section-{{ section.id }} .section-spacing {
+        padding-block: 26px;
+      }
+
+      #shopify-section-{{ section.id }} .section-stack {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      #shopify-section-{{ section.id }} .prose {
+        margin: 0;
+        flex-shrink: 0;
+      }
+
+      #shopify-section-{{ section.id }} .logo-list {
+        flex: 1;
+        align-items: center;
+      }
+
+      #shopify-section-{{ section.id }} .logo-list__item {
+        min-height: 0;
+      }
+
+      #shopify-section-{{ section.id }} .logo-list img {
+        opacity: 0.9;
+      }
+    {%- endif -%}
   </style>
 
   <div class="color-scheme color-scheme--{{ section.settings.color_scheme.id }}">

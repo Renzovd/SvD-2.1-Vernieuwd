@@ -25,13 +25,17 @@
     }
 
     {%- if is_often_bought_section -%}
-      #shopify-section-{{ section.id }} .featured-collections-header .button {
+      #shopify-section-{{ section.id }} .featured-collections-header .button,
+      #shopify-section-{{ section.id }} .featured-collections-products .button {
+        --button-background: 0 0 0;
+        --button-text-color: 255 255 255;
         background: #000000;
         color: #ffffff;
         border-color: #000000;
       }
 
-      #shopify-section-{{ section.id }} .featured-collections-header .button:hover {
+      #shopify-section-{{ section.id }} .featured-collections-header .button:hover,
+      #shopify-section-{{ section.id }} .featured-collections-products .button:hover {
         background: #000000;
         color: #ffffff;
         border-color: #000000;

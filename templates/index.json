@@ -251,8 +251,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Sportvoedingdirect_X_226ers.png",
-            "width": 200,
-            "mobile_width": 150,
+            "width": 150,
+            "mobile_width": 110,
             "link": "shopify://collections/226ers"
           }
         },
@@ -260,8 +260,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Sportvoedingdirect_X_Amacx.png",
-            "width": 200,
-            "mobile_width": 150,
+            "width": 170,
+            "mobile_width": 120,
             "link": "shopify://collections/amacx"
           }
         },
@@ -269,8 +269,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Sportvoedingdirect_X_Maurten.png",
-            "width": 200,
-            "mobile_width": 100,
+            "width": 120,
+            "mobile_width": 90,
             "link": "shopify://collections/maurten"
           }
         },
@@ -278,8 +278,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Sportvoedingdirect_X_Precision_fuel_and_hydration.png",
-            "width": 200,
-            "mobile_width": 100,
+            "width": 170,
+            "mobile_width": 120,
             "link": "shopify://collections/precision"
           }
         }
@@ -298,7 +298,7 @@
         "title": "BESCHIKBARE MERKEN",
         "heading_tag": "h5",
         "content_alignment": "left",
-        "reveal_on_scroll": true,
+        "reveal_on_scroll": false,
         "stack_on_mobile": false,
         "add_logos_spacing": false,
         "logos_padding_block": 0,

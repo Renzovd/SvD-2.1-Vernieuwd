@@ -1,0 +1,272 @@
+{%- liquid
+  assign carousel_id = 'trustpilot-reviews-' | append: section.id
+-%}
+
+<style>
+  #shopify-section-{{ section.id }} .trustpilot-reviews {
+    background: #121417;
+    color: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__inner {
+    padding-block: 42px;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__title {
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__cta {
+    --button-background: 217 255 54;
+    --button-text-color: 18 20 23;
+    background: #d9ff36;
+    color: #121417;
+    border-color: #d9ff36;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(260px, 1fr);
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 6px;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__card {
+    background: #f2f2f2;
+    color: #111214;
+    border-radius: 14px;
+    padding: 1rem 1.15rem;
+    min-height: 228px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__author {
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__meta {
+    margin: 0.1rem 0 0;
+    font-size: 0.72rem;
+    color: #8c8a97;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__stars {
+    margin: 0;
+    color: #cda8ff;
+    font-size: 0.88rem;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__body {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    white-space: pre-line;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__nav {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.45rem;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__nav .circle-button {
+    width: 24px;
+    min-width: 24px;
+    height: 6px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 0;
+    padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} .trustpilot-reviews__nav .circle-button svg {
+    display: none;
+  }
+
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} .trustpilot-reviews__list {
+      grid-auto-columns: calc((100% - 24px) / 3);
+    }
+  }
+
+  @media screen and (max-width: 999px) {
+    #shopify-section-{{ section.id }} .trustpilot-reviews__header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="trustpilot-reviews">
+  <div class="container trustpilot-reviews__inner">
+    <div class="trustpilot-reviews__header">
+      <h2 class="h3 trustpilot-reviews__title">{{ section.settings.title }}</h2>
+      {%- render 'button', content: section.settings.button_label, href: section.settings.button_url, style: 'solid', class: 'trustpilot-reviews__cta' -%}
+    </div>
+
+    <div id="{{ carousel_id }}" class="trustpilot-reviews__list">
+      {%- for block in section.blocks -%}
+        <article class="trustpilot-reviews__card" {{ block.shopify_attributes }}>
+          <div class="trustpilot-reviews__top">
+            <div>
+              <p class="trustpilot-reviews__author">{{ block.settings.author }}</p>
+              <p class="trustpilot-reviews__meta">{{ block.settings.meta }}</p>
+            </div>
+
+            <p class="trustpilot-reviews__stars" aria-label="{{ block.settings.rating }} van 5 sterren">
+              {%- for i in (1..5) -%}
+                {%- if i <= block.settings.rating -%}★{%- else -%}☆{%- endif -%}
+              {%- endfor -%}
+            </p>
+          </div>
+
+          <p class="trustpilot-reviews__body">{{ block.settings.review_text }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.blocks.size > 3 -%}
+      <div class="trustpilot-reviews__nav">
+        <carousel-prev-button aria-controls="{{ carousel_id }}">
+          <button type="button" class="circle-button" aria-label="Vorige review"></button>
+        </carousel-prev-button>
+        <carousel-next-button aria-controls="{{ carousel_id }}">
+          <button type="button" class="circle-button" aria-label="Volgende review"></button>
+        </carousel-next-button>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trustpilot reviews slider",
+  "tag": "section",
+  "class": "shopify-section--trustpilot-reviews-slider",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Titel",
+      "default": "KLANT IS KONING"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Knoptekst",
+      "default": "SCHRIJF EEN REVIEW"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Knop URL",
+      "default": "https://nl.trustpilot.com/review/sportvoedingdirect.nl"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Naam",
+          "default": "Ron Stoffelen"
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Subtitel",
+          "default": "Verified Customer - 2 dagen geleden"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Reviewtekst",
+          "default": "Geweldig bedrijf met een groot sport hart, de voeding keurig op tijd geleverd voor een zeer nette prijs!"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Trustpilot reviews slider",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "author": "Ron Stoffelen",
+            "meta": "Verified Customer - 2 dagen geleden",
+            "rating": 5,
+            "review_text": "Geweldig bedrijf met een groot sport hart, de voeding keurig op tijd geleverd voor een zeer nette prijs! De site is overzichtelijk met voedingsadviezen voor wedstrijden en opties om verschillende voedingsmiddelen te combineren."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "author": "Renzo van Diemen",
+            "meta": "Verified Customer - 2 dagen geleden",
+            "rating": 5,
+            "review_text": "Goede ervaring met SportvoedingDirect. De webshop is duidelijk en makkelijk in gebruik, waardoor bestellen snel en soepel gaat."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "author": "Isa",
+            "meta": "2 dagen geleden",
+            "rating": 5,
+            "review_text": "Top bedrijf. Het is een betrouwbaar en goed bedrijf. Had mijn producten snel geleverd, en klantenservice was ook goed."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

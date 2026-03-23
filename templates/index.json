@@ -306,6 +306,68 @@
         "logo_border": ""
       }
     },
+    "trustpilot_reviews_slider_Q2g5Nk": {
+      "type": "trustpilot-reviews-slider",
+      "blocks": {
+        "review_ronStoffelen": {
+          "type": "review",
+          "settings": {
+            "author": "Ron Stoffelen",
+            "meta": "Verified Customer - 2 dagen geleden",
+            "rating": 5,
+            "review_text": "Geweldig bedrijf met een groot sport hart, de voeding keurig op tijd geleverd voor een zeer nette prijs! De site is overzichtelijk met voedingsadviezen voor wedstrijden en opties om verschillende voedingsmiddelen te combineren.\n\nBij vragen zijn ze snel te bereiken en geven ze gepaste antwoorden!\n\nAL MET AL EEN TOPZAAK!"
+          }
+        },
+        "review_renzoVanDiemen": {
+          "type": "review",
+          "settings": {
+            "author": "Renzo van Diemen",
+            "meta": "Verified Customer - 2 dagen geleden",
+            "rating": 5,
+            "review_text": "Goede ervaring met SportvoedingDirect.\n\nDe webshop is duidelijk en makkelijk in gebruik, waardoor bestellen snel en soepel gaat. De levering is supersnel en het assortiment lijkt zorgvuldig uitgezocht, waardoor je makkelijk vindt wat je nodig hebt. Ik ga hier zeker vaker bestellen!"
+          }
+        },
+        "review_isa": {
+          "type": "review",
+          "settings": {
+            "author": "Isa",
+            "meta": "2 dagen geleden",
+            "rating": 5,
+            "review_text": "Top bedrijf.\n\nHet is een betrouwbaar en goed bedrijf. Had mijn producten snel geleverd, en klantenservice was ook goed, ruim assortiment in sportvoeding, goede ervaring."
+          }
+        },
+        "review_jobBoonstoppel": {
+          "type": "review",
+          "settings": {
+            "author": "Job Boonstoppel",
+            "meta": "Verified Customer - 2 dagen geleden",
+            "rating": 5,
+            "review_text": "Producten en service 10/10! Het assortiment van SportvoedingDirect biedt alles waar een duur atleet naar zoekt. Ook is er op klantenservice niks aan te merken."
+          }
+        },
+        "review_vidoWillems": {
+          "type": "review",
+          "settings": {
+            "author": "Vido Willems",
+            "meta": "13 mrt 2026",
+            "rating": 4,
+            "review_text": "Snelle levering en goede prijs. Makkelijk bestelproces en je wordt goed op de hoogte gehouden van de levering. Ook leuk dat er een persoonlijk handgeschreven kaartje bij zit :)"
+          }
+        }
+      },
+      "block_order": [
+        "review_ronStoffelen",
+        "review_renzoVanDiemen",
+        "review_isa",
+        "review_jobBoonstoppel",
+        "review_vidoWillems"
+      ],
+      "settings": {
+        "title": "KLANT IS KONING",
+        "button_label": "SCHRIJF EEN REVIEW",
+        "button_url": "https://nl.trustpilot.com/review/sportvoedingdirect.nl"
+      }
+    },
     "scrolling_content_ynHGiT": {
       "type": "scrolling-content",
       "blocks": {
@@ -858,6 +920,7 @@
     "slideshow_rwmxqG",
     "featured_collections_n3jbNk",
     "logo_list_djAf9W",
+    "trustpilot_reviews_slider_Q2g5Nk",
     "scrolling_content_ynHGiT",
     "media_blocks_LeT8Yw",
     "featured_collections_G9fB9x",
